@@ -1,0 +1,40 @@
+{
+    "Unit_Count": [
+        {
+            "Unit": "Sword",
+            "Count": 0
+        },
+        {
+            "Unit": "Bow",
+            "Count": 0
+        },
+        {
+            "Unit": "Staff",
+            "Count": 2
+        },
+        {
+            "Unit": "Katana",
+            "Count": 2
+        },
+        {
+            "Unit": "Mace",
+            "Count": 4
+        },
+        {
+            "Unit": "Polearm",
+            "Count": 3
+        },
+        {
+            "Unit": "Rod",
+            "Count": 7
+        },
+        {
+            "Unit": "Bukler",
+            "Count": 0
+        },
+        {
+            "Unit": "Shield",
+            "Count": 0
+        }
+    ]
+}

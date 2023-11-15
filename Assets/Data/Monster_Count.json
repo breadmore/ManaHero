@@ -1,0 +1,40 @@
+{
+    "Moster_Count": [
+        {
+            "Monster": "Green",
+            "Count": 511
+        },
+        {
+            "Monster": "Blue",
+            "Count": 368
+        },
+        {
+            "Monster": "Red",
+            "Count": 191
+        },
+        {
+            "Monster": "Rat",
+            "Count": 53
+        },
+        {
+            "Monster": "Bat",
+            "Count": 29
+        },
+        {
+            "Monster": "Ghost",
+            "Count": 23
+        },
+        {
+            "Monster": "Crab",
+            "Count": 22
+        },
+        {
+            "Monster": "Golem",
+            "Count": 7
+        },
+        {
+            "Monster": "Skull",
+            "Count": 1
+        }
+    ]
+}
