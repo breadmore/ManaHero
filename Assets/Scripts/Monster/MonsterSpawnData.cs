@@ -11,7 +11,6 @@ public class MonsterSpawnData : MonoBehaviour
     private AllRoundData datas;
 
 
-    // Dictionary to hold UpgradeSheet objects with upgrade as key
     private Dictionary<int, MonsterSpawn> MonsterSpawnDictionary;
 
     private void Awake()
@@ -19,14 +18,12 @@ public class MonsterSpawnData : MonoBehaviour
         datas = JsonUtility.FromJson<AllRoundData>(data.text);
         MonsterSpawnDictionary = new Dictionary<int, MonsterSpawn>();
 
-        // Populating the UpgradeSheetDictionary for easy access by upgrade value
         foreach (MonsterSpawn monsterSpawn in datas.Monster_Spawn)
         {
             MonsterSpawnDictionary[monsterSpawn.Round] = monsterSpawn;
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
         

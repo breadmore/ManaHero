@@ -23,7 +23,7 @@ public class UIEffect : MonoBehaviour
     {
         if (isAnimating)
         {
-            // 애니메이션이 완료되지 않았다면 애니메이션 중지 및 크기 초기화
+            // Animation Stop
             DOTween.Kill(rectTransform);
             rectTransform.localScale = Vector3.zero;
 
@@ -58,7 +58,7 @@ public class UIEffect : MonoBehaviour
 
         rectTransform.DOScale(Vector3.zero, 1.0f)
                      .OnComplete(() => {
-                          // UI가 닫힐 때 isUI를 false로 변경
+                          // isUI -> false
                      isAnimating = false;
                          gameObject.SetActive(false);
                      });

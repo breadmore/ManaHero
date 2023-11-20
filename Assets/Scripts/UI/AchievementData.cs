@@ -10,16 +10,13 @@ public class AchievementData : MonoBehaviour
     private AllData datas;
 
 
-    // Dictionary to hold UpgradeSheet objects with upgrade as key
     private Dictionary<string, MonsterCount> MonsterCountDictionary;
 
-    // Start is called before the first frame update
     private void Awake()
     {
         datas = JsonUtility.FromJson<AllData>(data.text);
         MonsterCountDictionary = new Dictionary<string, MonsterCount>();
 
-        // Populating the UpgradeSheetDictionary for easy access by upgrade value
         foreach (MonsterCount monsterCount in datas.Moster_Count)
         {
             MonsterCountDictionary[monsterCount.Monster] = monsterCount;
@@ -34,9 +31,8 @@ public class AchievementData : MonoBehaviour
         }
         else
         {
-            // Handle case when upgrade value is not found
             Debug.LogError("Monster value not found: " + monsterName);
-            return 0; // Or return a default value as per your requirement
+            return 0;
         }
     }
 

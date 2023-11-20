@@ -1,7 +1,3 @@
-/*
- *  Author: ariel oliveira [o.arielg@gmail.com]
- */
-
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,7 +11,6 @@ public class HealthController : MonoBehaviour
 
     private void Start()
     {
-        // Should I use lists? Maybe :)
         heartContainers = new GameObject[(int)PlayerHealth.instance.MaxTotalHealth];
         heartFills = new Image[(int)PlayerHealth.instance.MaxTotalHealth];
 

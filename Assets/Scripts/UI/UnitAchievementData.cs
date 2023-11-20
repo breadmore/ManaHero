@@ -10,17 +10,14 @@ public class UnitAchievementData : MonoBehaviour
     private UnitAllData datas;
 
 
-    // Dictionary to hold UpgradeSheet objects with upgrade as key
     private Dictionary<string, UnitCount> UnitCountDictionary;
 
-    // Start is called before the first frame update
     private void Awake()
     {
         datas = JsonUtility.FromJson<UnitAllData>(data.text);
         UnitCountDictionary = new Dictionary<string, UnitCount>();
 
-        // Populating the UpgradeSheetDictionary for easy access by upgrade value
-        foreach (UnitCount unitCount in datas.Unit_Count)
+       foreach (UnitCount unitCount in datas.Unit_Count)
         {
             UnitCountDictionary[unitCount.Unit] = unitCount;
         }
@@ -36,7 +33,7 @@ public class UnitAchievementData : MonoBehaviour
         {
             // Handle case when upgrade value is not found
             Debug.LogError("Unit value not found: " + unitName);
-            return 0; // Or return a default value as per your requirement
+            return 0;
         }
     }
 
