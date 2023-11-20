@@ -11,7 +11,7 @@ public class MonsterSpawnManager : MonoBehaviour
     public Monster[] monsterPrefab;
    
 
-    private float spawnCoolTime = 15f;
+    private float spawnCoolTime = 10f;
     private float currentSpawnTime = 0f;
 
     public int round;
@@ -46,7 +46,7 @@ public class MonsterSpawnManager : MonoBehaviour
                     for (int i = 0; i < kvp.Value; i++)
                     {
                         string monsterName = kvp.Key;
-                        SpawnMonster(monsterName, true); // Spawn monsters and set active to true
+                        ActivateMonster(monsterName); // Spawn monsters and set active to true
                     }
                 }
 
@@ -89,19 +89,6 @@ public class MonsterSpawnManager : MonoBehaviour
                 monsterSpawner[i].SpawnMonster(prefab);
             }
 
-            if (setActive)
-            {
-                for (int i = 0; i < monsterSpawner.Length; i++)
-                {
-                    // Check if this is the boss monster and round is 19
-                    if (round!=0 && round % 5 ==1)
-                    {
-                        monsterSpawner[i].setBossMonster(monsterName);
-                    }
-
-                    monsterSpawner[i].ActivateMonster(monsterName);
-                }
-            }
         }
         else
         {
@@ -109,6 +96,19 @@ public class MonsterSpawnManager : MonoBehaviour
         }
     }
 
+    private void ActivateMonster(string monsterName)
+    {
+        for (int i = 0; i < monsterSpawner.Length; i++)
+        {
+            // Check if this is the boss monster and round is 19
+            if (round != 0 && round % 5 == 1)
+            {
+                monsterSpawner[i].SetBossMonster(monsterName);
+            }
 
+            monsterSpawner[i].ActivateMonster(monsterName);
+        }
+        
+    }
 
 }

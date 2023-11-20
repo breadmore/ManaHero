@@ -14,6 +14,7 @@ public class LivingEntity : MonoBehaviour, IDamageable
     {
         dead = false;
         health = InitHealth;
+        print("hello");
     }
 
 

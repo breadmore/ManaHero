@@ -20,12 +20,18 @@ public class Monster : LivingEntity
 
     public bool isBoss = false;
     public float probability = 1f;
+
+
+    private Vector2 initpos;
     private void Awake()
     {
         character = GetComponent<Character>();
         renderer = GetComponent<Renderer>();
         rigidbody2D = GetComponent<Rigidbody2D>();
+        initpos = transform.position; 
     }
+
+
     public override void OnDamage(float damage)
     {
         if (dead)
@@ -50,10 +56,25 @@ public class Monster : LivingEntity
         }
         animator.SetTrigger("Die");
         gameObject.GetComponent<LivingEntity>().enabled = false;
-        Destroy(gameObject, .5f);
+
+        Invoke("DeactivateGameObject", 0.5f);
         string monsterName = RemoveCloneSuffix(gameObject.name);
         GameManager.instance.score++;
         GameManager.instance.UpdateMonsterCount(monsterName);
+    }
+
+    void DeactivateGameObject()
+    {
+        transform.position = initpos;
+        dead = false;
+        if (isBoss)
+        {
+            isBoss = false;
+            InitHealth /= 2;
+            damage = 1;
+            transform.localScale = new Vector2(1f, 1f);
+        }
+        gameObject.SetActive(false);
     }
 
     private string RemoveCloneSuffix(string name)

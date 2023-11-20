@@ -24,7 +24,7 @@ public class MonsterSpawner : MonoBehaviour
         }
     }
 
-    public void setBossMonster(string monsterName)
+    public void SetBossMonster(string monsterName)
     {
         foreach (Monster monster in monsters)
         {
